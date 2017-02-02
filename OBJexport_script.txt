@@ -1,0 +1,7 @@
+for( $i=0; $i<10; ++$i )
+{
+    currentTime $i ; 
+    select -r Bass_16:polySurface1;
+    string $pad = `python (“’../fish.%03d.obj' % "+$i)`;
+    file -force -options "groups=1;ptgroups=1;materials=0;smoothing=1;normals=1"-typ "OBJexport" -pr -es $pad; 
+}
